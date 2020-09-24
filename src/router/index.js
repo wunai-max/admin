@@ -146,7 +146,7 @@ export const asyncRoutes = [
         component: () => import('@/views/permission/page'),
         name: 'PagePermission',
         meta: {
-          title: '11111',
+          title: '权限1',
           roles: ['admin'] // or you can only set roles in sub nav
         }
       },
@@ -155,7 +155,7 @@ export const asyncRoutes = [
         component: () => import('@/views/permission/directive'),
         name: 'DirectivePermission',
         meta: {
-          title: '2222222'
+          title: '权限2'
           // if do not set roles, means: this page does not require permission
         }
       },
@@ -164,7 +164,7 @@ export const asyncRoutes = [
         component: () => import('@/views/permission/role'),
         name: 'RolePermission',
         meta: {
-          title: '3333333',
+          title: '权限3',
           roles: ['admin']
         }
       }
@@ -284,6 +284,39 @@ export const asyncRoutes = [
         component: () => import('@/views/city/list'),
         name: 'CityList',
         meta: { title: '城市列表', noCache: true, icon: 'list' }
+      }
+    ]
+  },
+
+  //电影模块
+  {
+    path: '/movie',
+    component: Layout,
+    redirect: '/movie/list',
+    name: 'movie',
+    meta: {
+      title: '电影模块',
+      icon: 'el-icon-s-help'
+    },
+    children: [
+      {
+        path: 'create',
+        component: () => import('@/views/movie/create'),
+        name: 'Createmovie',
+        meta: { title: '添加电影', noCache: true, icon: 'edit' }
+      },
+      {
+        path: 'edit/:id',
+        component: () => import('@/views/movie/edit'),
+        name: 'Editmovie',
+        meta: { title: '修改电影', noCache: true, activeMenu: '/movie/list' },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/movie/list'),
+        name: 'movieList',
+        meta: { title: '电影列表', noCache: true, icon: 'list' }
       }
     ]
   },
