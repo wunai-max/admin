@@ -35,8 +35,8 @@ const actions = {
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
-        commit('SET_TOKEN', data.token)
-        setToken(data.token)
+        commit('SET_TOKEN', data.token) // 状态管理store里面存储了一份儿
+        setToken(data.token) // cookie存了一份儿
         resolve()
       }).catch(error => {
         reject(error)
@@ -44,7 +44,7 @@ const actions = {
     })
   },
 
-  // get user info
+  // get user info  拉取用户信息
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
@@ -129,3 +129,4 @@ export default {
   mutations,
   actions
 }
+
