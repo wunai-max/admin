@@ -83,7 +83,6 @@ export default {
   },
   computed: {
     count() {
-      const num = (this.currentPage - 1) * 3
       var arr = []
       for (var i = 0; i < this.pagesize; i++) {
         arr.push(i)
@@ -92,11 +91,11 @@ export default {
     }
   },
   watch: {
-    currentPage(newVal, oldVal) {
-      if (newVal != oldVal) {
-        this.numm = (newVal - 1) * pagesize
-      }
-    }
+    // currentPage(newVal, oldVal) {
+    //   if (newVal != oldVal) {
+    //     this.numm = (newVal - 1) * pagesize
+    //   }
+    // }
   },
   created() {
     this.getCitys()
