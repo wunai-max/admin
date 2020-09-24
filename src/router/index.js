@@ -288,7 +288,7 @@ export const asyncRoutes = [
     ]
   },
 
-  //电影模块
+  // 电影模块
   {
     path: '/movie',
     component: Layout,

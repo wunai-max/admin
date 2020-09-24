@@ -17,8 +17,8 @@
         width="180"
       />
       <el-table-column property="imgurl" label="电影海报" width="240">
-        <template slot-scope="scope">            
-          <img :src="scope.row.imgurl"  min-width="70" height="70" />
+        <template slot-scope="scope">
+          <img :src="scope.row.imgurl" min-width="70" height="70">
         </template>
       </el-table-column>
       <el-table-column
@@ -26,22 +26,22 @@
         label="上映城市"
         width="130"
       />
-        <el-table-column
+      <el-table-column
         prop="stars"
         label="演员"
         width="180"
       />
-        <el-table-column
+      <el-table-column
         prop="score"
         label="评分"
         width="130"
       />
-       <el-table-column
+      <el-table-column
         prop="desc"
         label="描述"
         width="180"
       />
-       
+
       <el-table-column label="操作">
         <template slot-scope="scope">
           <el-button
@@ -120,7 +120,7 @@ export default {
     getCitys() {
       axios.get(`/movies?page=${this.currentPage}&pagesize=${this.pagesize}`).then(res => {
         this.tableData = res.data.list
-        console.log(this.tableData);
+        console.log(this.tableData)
         this.total = res.data.total
       })
     },
